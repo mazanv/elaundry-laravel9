@@ -113,40 +113,16 @@ class KurirController extends Controller
             'status' => 'required',
             'alamat' => 'required',
             'no_telp' => 'required',
-
         ]);
 
-        $kurir->updated([
+        $kurir->update([
             'nama_kurir'   => $request->nama_kurir,
             'email'        => $request->email,
             'status'       => $request->status,
             'alamat'       => $request->alamat,
             'no_telp'      => $request->no_telp
-
         ]);
-        // $request->validate([
-        //     'nama_kurir' => 'required',
-        //     'email' => 'required',
-        //     'alamat' => 'required',
-        //     'no_telp' => 'required',
-        // ]);
-
-        // $addproduct = DKurir::find($id);
-        // $addproduct->update($request->all());
-
-
-        // $addkurir = DB::table('d_kurirs')->get();
-        // $addkurir = new DKurir();
-        // $addkurir = DKurir::find($id);
-        // $addkurir->nama_kurir   = $request->nama_kurir;
-        // $addkurir->email        = $request->email;
-        // $addkurir->status       = 'Active';
-        // $addkurir->alamat       = $request->alamat;
-        // $addkurir->no_telp      = $request->no_telp;
-        // $addkurir->password     = Hash::make($request->password);
-        // $addkurir->save();
-
-        return redirect()->route('kurir.index')->with(['success' => 'Data Berhasil di ubah']);
+        return redirect()->route('kurir.index');
     }
 
     /**
